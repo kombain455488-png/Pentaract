@@ -8,34 +8,20 @@ services:
       - key: PORT
         value: 10000
       - key: DATABASE_HOST
-        fromDatabase:
-          name: pentaract-db
-          property: host
+        value: ep-dry-wave-b1b3wxz6-pooler.c-5.eu-central-1.aws.neon.tech
       - key: DATABASE_PORT
-        fromDatabase:
-          name: pentaract-db
-          property: port
+        value: 5432
       - key: DATABASE_USER
-        fromDatabase:
-          name: pentaract-db
-          property: user
+        value: neondb_owner
       - key: DATABASE_PASSWORD
-        fromDatabase:
-          name: pentaract-db
-          property: password
+        sync: false  # пароль введём вручную в Render
       - key: DATABASE_NAME
-        fromDatabase:
-          name: pentaract-db
-          property: database
+        value: neondb
+      - key: DATABASE_SSLMODE
+        value: require
       - key: SECRET_KEY
         generateValue: true
       - key: SUPERUSER_EMAIL
         sync: false
       - key: SUPERUSER_PASS
         sync: false
-
-databases:
-  - name: pentaract-db
-    plan: free
-    databaseName: pentaract
-    user: pentaract
