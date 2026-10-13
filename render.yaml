@@ -1,0 +1,41 @@
+services:
+  - type: web
+    name: pentaract
+    env: docker
+    plan: free
+    dockerfilePath: ./Dockerfile
+    envVars:
+      - key: PORT
+        value: 10000
+      - key: DATABASE_HOST
+        fromDatabase:
+          name: pentaract-db
+          property: host
+      - key: DATABASE_PORT
+        fromDatabase:
+          name: pentaract-db
+          property: port
+      - key: DATABASE_USER
+        fromDatabase:
+          name: pentaract-db
+          property: user
+      - key: DATABASE_PASSWORD
+        fromDatabase:
+          name: pentaract-db
+          property: password
+      - key: DATABASE_NAME
+        fromDatabase:
+          name: pentaract-db
+          property: database
+      - key: SECRET_KEY
+        generateValue: true
+      - key: SUPERUSER_EMAIL
+        sync: false
+      - key: SUPERUSER_PASS
+        sync: false
+
+databases:
+  - name: pentaract-db
+    plan: free
+    databaseName: pentaract
+    user: pentaract
