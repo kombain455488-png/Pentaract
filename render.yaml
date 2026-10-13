@@ -8,13 +8,13 @@ services:
       - key: PORT
         value: 10000
       - key: DATABASE_HOST
-        value: ep-dry-wave-b1b3wxz6-pooler.c-5.eu-central-1.aws.neon.tech
+        value: ep-flat-voice-ba0p8utf-pooler.c-8.eu-central-1.aws.neon.tech
       - key: DATABASE_PORT
         value: 5432
       - key: DATABASE_USER
         value: neondb_owner
       - key: DATABASE_PASSWORD
-        sync: false  # пароль введём вручную в Render
+        sync: false
       - key: DATABASE_NAME
         value: neondb
       - key: DATABASE_SSLMODE
