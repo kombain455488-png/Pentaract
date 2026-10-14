@@ -2,7 +2,7 @@
 ####  SERVER
 ############################################################################################
 
-FROM clux/muslrust:stable AS chef
+FROM blackdex/rust-musl:x86_64-musl-stable AS chef
 USER root
 RUN cargo install cargo-chef
 WORKDIR /app
