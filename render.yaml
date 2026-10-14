@@ -10,11 +10,13 @@ services:
       - key: WORKERS
         value: 4
       - key: CHANNEL_CAPACITY
-        value: 100
+        value: 32
       - key: ACCESS_TOKEN_EXPIRE_IN_SECS
         value: 1800
       - key: REFRESH_TOKEN_EXPIRE_IN_DAYS
         value: 14
+      - key: TELEGRAM_API_BASE_URL
+        value: https://api.telegram.org
       - key: DATABASE_HOST
         value: ep-flat-voice-ba0p8utf-pooler.c-8.eu-central-1.aws.neon.tech
       - key: DATABASE_PORT
